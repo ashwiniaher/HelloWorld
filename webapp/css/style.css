@@ -1,1 +1,14 @@
 /* Enter your custom styles here */
+.body {
+    background-color: lightblue;
+}
+
+.h1 {
+    color: white;
+    text-align: center;
+}
+
+.paragraph {
+    font-family: verdana;
+    font-size: 20px;
+}
