@@ -4,16 +4,14 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("TestGit.controller.JSdemo", {
-		on:function(){
-		//alert("Bulb on!!");	
-		var image = sap.ui.getCore().byId(this.getView().sId+"--bulb");
-		image.setProperty("src","./resources/images/pic_bulbon.gif");
-		},
-		off:function(){
-		//alert("Bulb off!!");
-		var image = sap.ui.getCore().byId(this.getView().sId+"--bulb");
-		image.setProperty("src", "./resources/images/pic_bulboff.gif");
+		bulbswithch:function(event){
+			//alert("Bulb on!!");
+			var image = sap.ui.getCore().byId(this.createId("bulb"));
+			if(event.getSource().data("mydata") === "on"){
+				image.setProperty("src","./resources/images/pic_bulbon.gif");
+			}else{
+				image.setProperty("src", "./resources/images/pic_bulboff.gif");
+			}
 		}
-		
-	});
+		});
 });

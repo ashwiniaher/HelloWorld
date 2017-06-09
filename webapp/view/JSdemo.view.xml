@@ -1,11 +1,12 @@
 <mvc:View controllerName="TestGit.controller.JSdemo" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" 
-    displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" id="JSdeom">
+    displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" id="JSdeom" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<App>
 			<Page showHeader="false" class="body">
 				<content>
 					<Image id="bulb" src="./resources/images/pic_bulboff.gif" ></Image>
-					<Button text="{i18n>bulbonButton}" press="on"></Button>
-					<Button text="{i18n>bulboffButton}" press="off"></Button>
+					<Button text="{i18n>bulbonButton}" press="bulbswithch" app:mydata="on" >
+					</Button>
+					<Button text="{i18n>bulboffButton}" press="bulbswithch" app:mydata="off" ></Button>
 				</content>
 			</Page>
 	</App>
