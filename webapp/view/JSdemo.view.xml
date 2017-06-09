@@ -1,0 +1,13 @@
+<mvc:View controllerName="TestGit.controller.JSdemo" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" id="JSdeom">
+	<App>
+			<Page showHeader="false" class="body">
+				<content>
+					<Image id="bulb" src="./resources/images/pic_bulboff.gif" ></Image>
+					<Button text="{i18n>bulbonButton}" press="on"></Button>
+					<Button text="{i18n>bulboffButton}" press="off"></Button>
+				</content>
+			</Page>
+	</App>
+	
+</mvc:View>

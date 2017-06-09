@@ -1,10 +1,11 @@
 <mvc:View controllerName="TestGit.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true" xmlns="sap.m">
-	<App>
-		<pages>
+	<App id="app">
 			<Page title="{i18n>title}">
-				<content></content>
+				<content>
+					<Link press="Cssdemo" text="Css Assignment" width="100%"></Link>
+					<Link press="JSdemo" text="JavaScript Assignment" width="100%"></Link>
+				</content>
 			</Page>
-		</pages>
 	</App>
 </mvc:View>

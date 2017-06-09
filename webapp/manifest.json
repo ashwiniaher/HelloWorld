@@ -39,7 +39,7 @@
 
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "TestGit.view.Cssdemo",
+			"viewName": "TestGit.view.View1",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -70,6 +70,36 @@
 			"css": [{
 				"uri": "css/style.css"
 			}]
+		},
+		"routing":	{
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "TestGit.view",
+				"controlId": "app",
+	            "controlAggregation": "pages",
+	            "transition": "slide"
+			},
+			"routes": [{
+					"pattern": "Cssdemo",
+					"name": "Cssdemo",
+					"target": "Cssdemo"
+				},
+				{
+					"pattern": "JSdemo",
+					"name": "JSdemo",
+					"target": "JSdemo"
+				}],
+			"targets": {
+		            "CssDemo": {
+		               "viewName": "Cssdemo",
+		               "viewLevel" : 1
+		            },
+		            "JSDemo": {
+		               "viewName": "JSdemo",
+		               "viewLevel" : 1
+		            }
+				}
+			}
 		}
-	}
 }
