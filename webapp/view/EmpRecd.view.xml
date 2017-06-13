@@ -30,7 +30,15 @@
 					</Column>
 				</columns>
 				<items>
-					<ColumnListItem ></ColumnListItem>
+					<ColumnListItem >
+						<cells>
+							<Text text="{sr}"></Text>
+							<Input value="{fname}" ></Input>
+							<Input value="{lname}" ></Input>
+							<Input value="{empid}" ></Input>
+							<Input value="{city}" ></Input>
+						</cells>
+					</ColumnListItem>
 				</items>
 			</Table>
 		</VBox>
