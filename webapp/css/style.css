@@ -12,7 +12,15 @@
     font-family: verdana;
     font-size: 20px;
 }
-
+.paddingzero{
+	padding: 0 !important;
+}
+tr[data-background="odd"] {
+ background-color: #eaa6a6 !Important;
+}
+tr[data-background="even"] {
+ background-color: #7dc0dc !Important;
+}
 .odd{
 	background-color: lightblue;
 }

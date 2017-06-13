@@ -3,7 +3,7 @@ sap.ui.define([
 ], function(Controller) {
 	"use strict";
 	// Model Data (local) 
-	 var tableData = [{sr: "1", fname: "",   lname: "", empid: "", city:""}];
+	 var tableData = [{sr: "1", fname: "",   lname: "", empid: "", city:"", odd: "even"}];
 	 
 	return Controller.extend("TestGit.controller.EmpRecd", {
 		onInit: function(){
@@ -17,7 +17,12 @@ sap.ui.define([
 		addRow : function(){
             var table = sap.ui.getCore().byId(this.createId("EmpRcdTable"));     
 			var data = this.getView().getModel().getProperty("/modelData");
-			data.push({sr: this.getRowCount(table)+1, fname: "",   lname: "", empid: "", city:""});
+			var rowcount = this.getRowCount(table);
+			var background = "odd";
+			if(rowcount%2===0){
+				background = "even";
+			}
+			data.push({sr: rowcount+1, fname: "",   lname: "", empid: "", city:"", odd: background});
 			this.getView().getModel().setProperty("/modelData",data);
 		},
 		getRowCount: function(table){

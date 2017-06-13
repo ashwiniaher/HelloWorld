@@ -1,7 +1,7 @@
 <mvc:View controllerName="TestGit.controller.EmpRecd" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" 
-    displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" id="EmpRcd" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" id="EmpRcd" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" >
 		<VBox height="80%">
-			<Table id="EmpRcdTable" items="{/modelData}" width="60%"  >
+			<Table id="EmpRcdTable" items="{/modelData}" width="60%" headerText="Employee Record" >
 				<columns>
 					<Column hAlign="Center" width="10%">
 						<header>
@@ -29,14 +29,17 @@
 						</header>
 					</Column>
 				</columns>
-				<items>
+				<items >
 					<ColumnListItem >
+						<customData>
+	                      <core:CustomData key="background" value="{odd}" writeToDom="true" />
+	                    </customData>
 						<cells>
-							<Text text="{sr}"></Text>
-							<Input value="{fname}" ></Input>
-							<Input value="{lname}" ></Input>
-							<Input value="{empid}" ></Input>
-							<Input value="{city}" ></Input>
+							<Text text="{sr}" class="paddingzero"></Text>
+							<Input value="{fname}" class="paddingzero"></Input>
+							<Input value="{lname}" class="paddingzero"></Input>
+							<Input value="{empid}" class="paddingzero"></Input>
+							<Input value="{city}" class="paddingzero"></Input>
 						</cells>
 					</ColumnListItem>
 				</items>
