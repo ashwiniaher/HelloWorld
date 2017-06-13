@@ -39,7 +39,7 @@
 
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "TestGit.view.JSdemo",
+			"viewName": "TestGit.view.EmpRecd",
 			"type": "XML"
 		},
 		"dependencies": {

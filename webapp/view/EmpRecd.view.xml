@@ -1,0 +1,40 @@
+<mvc:View controllerName="TestGit.controller.EmpRecd" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" id="EmpRcd" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+		<VBox height="80%">
+			<Table id="EmpRcdTable" items="{/modelData}" width="60%"  >
+				<columns>
+					<Column hAlign="Center" width="10%">
+						<header>
+							<Text text="Sr No."/>
+						</header>
+					</Column>
+					<Column hAlign="Center" width="10%">
+						<header>
+							<Text text="First Name"/>
+						</header>
+					</Column>
+					<Column hAlign="Center" width="10%">
+						<header>
+							<Text text="Last Name"/>
+						</header>
+					</Column>
+					<Column hAlign="Center" width="10%">
+						<header>
+							<Text text="Emp ID"/>
+						</header>
+					</Column>
+					<Column hAlign="Center" width="10%">
+						<header>
+							<Text text="City"/>
+						</header>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem ></ColumnListItem>
+				</items>
+			</Table>
+		</VBox>
+		<VBox height="20%">
+				<Button  text="Add" press="addRow"></Button >
+		</VBox>
+</mvc:View>
