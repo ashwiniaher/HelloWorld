@@ -21,6 +21,12 @@ tr[data-background="odd"] {
 tr[data-background="even"] {
  background-color: #7dc0dc !Important;
 }
-.odd{
-	background-color: lightblue;
+.sapMListTblCell{
+	    padding: .2rem .2rem;
+}
+.sapMListTblCell{
+	vertical-align:middle;
+}
+.sapMInputBase{
+	height : auto;
 }

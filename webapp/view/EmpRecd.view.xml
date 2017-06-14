@@ -3,7 +3,7 @@
 			<VBox height="80%" >
 				<Table id="EmpRcdTable" items="{/modelData}" width="60%" headerText="Employee Record" growing="true"
 	                    growingThreshold="5"
-	                    growingScrollToLoad="true">
+	                    growingScrollToLoad="true" >
 					<columns>
 						<Column hAlign="Center" width="10%">
 							<header>
