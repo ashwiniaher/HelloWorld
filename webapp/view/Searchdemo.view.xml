@@ -1,0 +1,65 @@
+<mvc:View controllerName="TestGit.controller.Searchdemo" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+	         <Page id="searchpage" showHeader="false" >
+	            <content>
+					<FlexBox width="100%">
+						<VBox width="100%" class="sapUiMediumMargin">
+							<FlexBox width="100%">
+								<VBox width="10%" >
+									<Label text="{i18n>search_itemno}" class="sapUiTinyMarginBeginEnd" ></Label>
+								</VBox>
+								<VBox width="80%">
+									<SearchField search="onSearchNo" showSearchButton="true" class="sapUiMediumMarginBegin" ></SearchField>
+								</VBox>
+							</FlexBox>
+							<Panel id="searchpanel" expandable="true" headerText="{i18n>search_advancedsearchtitle}" >
+								<content>
+								<VBox width="100%">
+									<HBox>
+										<VBox width="150px" >
+											<Label text="{i18n>search_itemname}" class="sapUiTinyMarginBeginEnd"></Label>
+										</VBox>
+										<VBox width="50%" >
+											<Input ></Input>
+									    </VBox>
+									    <VBox width="150px" >
+									    	<Label text="{i18n>search_createdate}" class="sapUiTinyMarginBeginEnd"></Label>
+									    </VBox>
+									    <VBox width="50%" >
+									    	<Input ></Input>
+									    </VBox>
+									</HBox>
+									<HBox>
+										<VBox width="150px" >
+									    	<Label text="{i18n>search_parentname}" class="sapUiTinyMarginBeginEnd"></Label>
+									    </VBox>
+									    <VBox width="50%" >
+									    	<Input ></Input>
+									    </VBox>
+									    <VBox width="20%" class="sapUiMediumMarginBeginEnd" >
+									    	<Button text="Search" class="sapUiTinyMarginBeginBegin"></Button>
+									     </VBox>
+									</HBox>
+								</VBox>
+			                  </content>
+			                </Panel>
+		                </VBox>
+	                </FlexBox>
+	                <VBox>
+	                	<List id="itemsList" headerText="Items List"
+					      class="sapUiResponsiveMargin"
+					      width="auto"
+					      items="{items>/items}" >
+					      <items>
+					         <ObjectListItem
+					            title="{items>no} x {items>name}"/>
+					      </items>
+					   </List>	
+	                </VBox>
+	            </content>
+	         </Page>
+    	</pages>
+   </App>
+</mvc:View>

@@ -38,8 +38,9 @@
 	},
 
 	"sap.ui5": {
+		"_version": "1.1.0",
 		"rootView": {
-			"viewName": "TestGit.view.EmpRecd",
+			"viewName": "TestGit.view.Searchdemo",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -64,6 +65,10 @@
 				"settings": {
 					"bundleName": "TestGit.i18n.i18n"
 				}
+			},
+			"items": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "Items.json"
 			}
 		},
 		"resources": {
