@@ -30,25 +30,7 @@
 											    	<Label text="{i18n>search_createdate}" class="sapUiTinyMarginBeginEnd sapUiSmallMargin "></Label>
 											    </VBox>
 											    <VBox width="50%" >
-											    	<DatePicker
-											    		id="createdate"
-											    		busy="false"
-											    		busyIndicatorDelay="1000"
-											    		visible="true"
-											    		fieldGroupIds="[]"
-											    		enabled="true"
-											    		valueState="None"
-											    		editable="true"
-											    		showValueStateMessage="true"
-											    		textAlign="Initial"
-											    		textDirection="Inherit"
-											    		required="false">
-											    		<tooltip></tooltip><!-- sap.ui.core.TooltipBase -->
-											    		<customData></customData><!-- sap.ui.core.CustomData -->
-											    		<layoutData></layoutData><!-- sap.ui.core.LayoutData -->
-											    		<dependents></dependents><!-- sap.ui.core.Element -->
-											    		<specialDates></specialDates><!-- sap.ui.core.Element -->
-											    	</DatePicker>
+											    	<DatePicker id="createdate"	valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd" />
 											    </VBox>
 											</HBox>
 											<HBox>
@@ -79,7 +61,9 @@
 					         	<attributes>
 									<ObjectAttribute text="{name}" />
 									<ObjectAttribute text="{created}" />
+										
 								</attributes>
+							
 					         </ObjectListItem>
 					      </items>
 					   </List>	

@@ -30,6 +30,8 @@ sap.ui.define([
 			var itemname = sap.ui.getCore().byId(this.createId("itemname")).getValue();
 			var parent = sap.ui.getCore().byId(this.createId("parent")).getValue();
 			var createDate = sap.ui.getCore().byId(this.createId("createdate")).getValue();
+			//var dateFormat = sap.ui.core.format.DateFormat.getDateInstance({pattern : "YYYY/MM/DD" });   
+			//var dateFormatted = dateFormat.format(createDate);
 			// build filter array
 			var aFilter = [];
 			//var sQuery = oEvent.getParameter("query");
@@ -40,7 +42,7 @@ sap.ui.define([
 				aFilter.push(new Filter("parent", FilterOperator.Contains, parent));
 			}
 			if (createDate) {
-				aFilter.push(new Filter("created", FilterOperator.Date([createDate])));
+				aFilter.push(new Filter("created", FilterOperator.EQ, createDate));
 			}
 			// filter binding
 			var oList = this.getView().byId("itemsList");
