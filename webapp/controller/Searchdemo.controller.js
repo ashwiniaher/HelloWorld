@@ -1,18 +1,16 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/ui/model/resource/ResourceModel",
 	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator"
-], function(Controller, ResourceModel, Filter, FilterOperator) {
+	"sap/ui/model/FilterOperator",
+	"sap/ui/model/json/JSONModel"
+], function(Controller, Filter, FilterOperator, JSONModel) {
 	"use strict";
-	var i18nModel;
+	
 	return Controller.extend("TestGit.controller.Searchdemo", {
 		onInit: function(){
-			// set i18n model on view
-			i18nModel = new ResourceModel({
-			bundleName: "TestGit.i18n.i18n"
-			});
-			this.getView().setModel(i18nModel, "i18n");
+			// set Items model on this sample
+			var oModel = new sap.ui.model.json.JSONModel(jQuery.sap.getModulePath("TestGit.mockdata", "/Items.json"));
+			this.getView().setModel(oModel);
 			
 		},
 		onSearchNo: function(oEvent){
@@ -20,13 +18,34 @@ sap.ui.define([
 			var aFilter = [];
 			var sQuery = oEvent.getParameter("query");
 			if (sQuery) {
-				aFilter.push(new Filter("no", FilterOperator.Contains, sQuery));
+				aFilter.push(new Filter("no", FilterOperator.StartsWith, sQuery));
 			}
 			// filter binding
 			var oList = this.getView().byId("itemsList");
 			var oBinding = oList.getBinding("items");
 			oBinding.filter(aFilter);
 			
+		},
+		onAdvancedSearch: function(oEvent){
+			var itemname = sap.ui.getCore().byId(this.createId("itemname")).getValue();
+			var parent = sap.ui.getCore().byId(this.createId("parent")).getValue();
+			var createDate = sap.ui.getCore().byId(this.createId("createdate")).getValue();
+			// build filter array
+			var aFilter = [];
+			//var sQuery = oEvent.getParameter("query");
+			if (itemname) {
+				aFilter.push(new Filter("name", FilterOperator.Contains, itemname));
+			}
+			if (parent) {
+				aFilter.push(new Filter("parent", FilterOperator.Contains, parent));
+			}
+			if (createDate) {
+				aFilter.push(new Filter("created", FilterOperator.Date([createDate])));
+			}
+			// filter binding
+			var oList = this.getView().byId("itemsList");
+			var oBinding = oList.getBinding("items");
+			oBinding.filter(aFilter);
 		}
 	});
 });

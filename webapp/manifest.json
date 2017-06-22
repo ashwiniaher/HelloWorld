@@ -65,10 +65,6 @@
 				"settings": {
 					"bundleName": "TestGit.i18n.i18n"
 				}
-			},
-			"items": {
-				"type": "sap.ui.model.json.JSONModel",
-				"uri": "Items.json"
 			}
 		},
 		"resources": {
