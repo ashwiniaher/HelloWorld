@@ -12,19 +12,27 @@
 			data-sap-ui-libs="sap.m, sap.ui.commons, sap.ui.table"
 			data-sap-ui-theme="sap_belize"
 			data-sap-ui-compatVersion="edge"
+			data-sap-ui-preload="async"
 			data-sap-ui-resourceroots='{"TestGit": ""}'>
 		</script>
-
+		<!--<script src="https://sap.github.io/openSAP-ui5-course/Validator.js"></script>-->
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 
 		<script>
 			sap.ui.getCore().attachInit(function() {
-				new sap.m.Shell({
-					app: new sap.ui.core.ComponentContainer({
-						height : "100%",
-						name : "TestGit"
-					})
-				}).placeAt("content");
+				sap.ui.require([
+					//"TestGit/mockdata/mockserver",
+					"sap/m/Shell",
+					"sap/ui/core/ComponentContainer"
+				], function (mockserver, Shell, ComponentContainer) {
+					//mockserver.init();
+					new sap.m.Shell({
+						app: new sap.ui.core.ComponentContainer({
+							height : "100%",
+							name : "TestGit"
+						})
+					}).placeAt("content");
+				});
 			});
 		</script>
 	</head>

@@ -18,6 +18,11 @@
       "templateId": "ui5template.basicSAPUI5ApplicationProject",
       "templateVersion": "1.40.12",
       "dateTimeStamp": "Wed, 07 Jun 2017 06:54:55 GMT"
+    },
+    {
+      "templateId": "servicecatalog.connectivityComponent",
+      "templateVersion": "0.0.0",
+      "dateTimeStamp": "Thu, 13 Jul 2017 08:59:56 GMT"
     }
   ],
   "translation": {
@@ -38,5 +43,12 @@
     "notifyBeforePushLevel": "Error",
     "blockPush": false,
     "blockPushLevel": "Error"
+  },
+  "mockpreview": {
+    "mockUri": "/nothwind/V2/Northwind/Northwind.svc",
+    "metadataFilePath": "mockdata/metadata.xml",
+    "mockRequestsFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false
   }
 }

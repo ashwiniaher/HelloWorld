@@ -9,7 +9,7 @@ sap.ui.define([
 	return Controller.extend("TestGit.controller.Searchdemo", {
 		onInit: function(){
 			// set Items model on this sample
-			var oModel = new sap.ui.model.json.JSONModel(jQuery.sap.getModulePath("TestGit.mockdata", "/Items.json"));
+			var oModel = new JSONModel(jQuery.sap.getModulePath("TestGit", "/Items.json"));
 			this.getView().setModel(oModel);
 			
 		},
@@ -48,6 +48,17 @@ sap.ui.define([
 			var oList = this.getView().byId("itemsList");
 			var oBinding = oList.getBinding("items");
 			oBinding.filter(aFilter);
+		},
+		onPress: function(oEvent){
+			//var oItem = oEvent.getSource();
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			var selectedItem = oEvent.getSource().getBindingContext().getPath().substr(7);
+			oRouter.navTo("detail", {
+				id: selectedItem//oItem.getBindingContext().getProperty("no")
+			});
+		
+				
 		}
+			
 	});
 });

@@ -1,0 +1,17 @@
+<mvc:View
+	controllerName="TestGit.controller.Detail"
+	xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" 
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+	<App>
+		<pages>
+			<Page title="Detail" >
+				<VBox>
+					<Text text="No: {no}" />
+					<Text text="Name: {name}" />
+					<Text text="{name}" />
+				</VBox>
+			</Page>
+		</pages>
+	</App>
+		
+</mvc:View>

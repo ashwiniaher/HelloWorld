@@ -53,7 +53,7 @@
 					      width="auto"
 					      items="{/items}" >
 					      <items>
-					         <ObjectListItem title="{no}">
+					         <ObjectListItem title="{no}" type="Navigation" press="onPress">
 					         	<attributes>
 									<ObjectAttribute text="{name}" />
 									<ObjectAttribute text="{created}" />
@@ -62,7 +62,12 @@
 							
 					         </ObjectListItem>
 					      </items>
-					   </List>	
+					   </List>
+					   <!--<List items="{/Categories}" headerText="Items from OData Service">
+					   		<items>
+					   			<ObjectListItem id="masterListItem" title="{CategoryName}" intro="{Description}"></ObjectListItem>
+					   		</items>
+					   </List>-->
 	                </VBox>
 	            </content>
 	         </Page>

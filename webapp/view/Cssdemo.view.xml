@@ -1,7 +1,7 @@
 <mvc:View controllerName="TestGit.controller.Cssdemo" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" 
     displayBlock="true" xmlns="sap.m">
 	<App>
-			<Page showHeader="false" class="body">
+			<Page showHeader="false" class="body" >
 				<content>
 					<Title text="{i18n>myfirstcssText}" titleStyle="H1" level="H1" class="h1" width="100%" />
 					<Text text="{i18n>paragraphText}" class="paragraph" />

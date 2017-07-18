@@ -10,11 +10,20 @@
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
 		"sourceTemplate": {
-			"id": "ui5template.basicSAPUI5ApplicationProject",
-			"version": "1.40.12"
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"Northwind": {
+				"uri": "/nothwind/V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
 		}
 	},
-
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -33,14 +42,12 @@
 		"supportedThemes": [
 			"sap_hcb",
 			"sap_belize"
-
 		]
 	},
-
 	"sap.ui5": {
 		"_version": "1.1.0",
 		"rootView": {
-			"viewName": "TestGit.view.Searchdemo",
+			"viewName": "TestGit.view.View1",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -68,20 +75,22 @@
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
-		"routing":	{
+		"routing": {
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
 				"viewPath": "TestGit.view",
 				"controlId": "app",
-	            "controlAggregation": "pages",
-	            "transition": "slide"
+				"controlAggregation": "pages"
 			},
-			"routes": [{
+			"routes": [
+				{
 					"pattern": "Cssdemo",
 					"name": "Cssdemo",
 					"target": "Cssdemo"
@@ -90,17 +99,34 @@
 					"pattern": "JSdemo",
 					"name": "JSdemo",
 					"target": "JSdemo"
-				}],
+				},
+				{
+					"pattern": "Searchdemo",
+					"name": "Searchdemo",
+					"target": "Searchdemo"
+				},
+				{
+					"pattern": "detail/{id}",
+					"name": "detail",
+					"target": "detail"
+				}
+			],
 			"targets": {
-		            "CssDemo": {
-		               "viewName": "Cssdemo",
-		               "viewLevel" : 1
-		            },
-		            "JSDemo": {
-		               "viewName": "JSdemo",
-		               "viewLevel" : 1
-		            }
+				"Cssdemo": {
+					"viewName": "Cssdemo"
+				},
+				"JSdemo": {
+					"viewName": "JSdemo"
+				},
+				"Searchdemo": {
+					"viewName": "Searchdemo",
+					"viewLevel": 1
+				},
+				"detail": {
+					"viewName": "Detail",
+					"viewLevel": 2
 				}
 			}
 		}
+	}
 }

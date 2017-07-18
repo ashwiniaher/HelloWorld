@@ -5,6 +5,7 @@
 				<content>
 					<Link press="Cssdemo" text="Css Assignment" width="100%"></Link>
 					<Link press="JSdemo" text="JavaScript Assignment" width="100%"></Link>
+					<Link press="Searchdemo" text="Search Items Assignment" width="100%"></Link>	
 				</content>
 			</Page>
 	</App>
