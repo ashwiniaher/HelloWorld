@@ -45,8 +45,8 @@
     "blockPushLevel": "Error"
   },
   "mockpreview": {
-    "mockUri": "/nothwind/V2/Northwind/Northwind.svc",
-    "metadataFilePath": "mockdata/metadata.xml",
+    "mockUri": "/nothwind/V2/Northwind/Northwind.svc/",
+    "metadataFilePath": "localService/metadata.xml",
     "mockRequestsFilePath": "",
     "loadJSONFiles": false,
     "loadCustomRequests": false

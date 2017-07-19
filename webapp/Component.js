@@ -42,7 +42,7 @@ sap.ui.define([
 			});
 			this.setModel(i18nModel, "i18n");
 			
-		/*	var mConfig = this.getMetadata().getManifestEntry("sap.app");
+			var mConfig = this.getMetadata().getManifestEntry("sap.app");
 			var sServiceUrl = mConfig.dataSources.Northwind.uri;//this.getMetadata().getManifestEntry("sap.app").dataSources.Northwind.uri
 			
 			//Create and set domain model to the component
@@ -53,7 +53,7 @@ sap.ui.define([
 			oDataModel.attachMetadataFailed(function() {
 				this.getEventBus().publish("Component","MetadataFailed");
 			},this);
-			this.setModel(oDataModel);*/
+			this.setModel(oDataModel,"OData");
 		}
 	});
 });

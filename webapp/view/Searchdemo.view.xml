@@ -1,76 +1,79 @@
-<mvc:View controllerName="TestGit.controller.Searchdemo" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
-	displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+<mvc:View controllerName="TestGit.controller.Searchdemo" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<App>
 		<pages>
-	         <Page id="searchpage" showHeader="false" >
-	            <content>
-					<FlexBox width="100%">
-						<VBox width="100%" class="sapUiMediumMargin">
-							<FlexBox width="100%">
-								<VBox width="10%" >
-									<Label text="{i18n>search_itemno}" class="sapUiTinyMarginBeginEnd sapUiSmallMargin " ></Label>
+			<Page id="searchpage" showHeader="false">
+				<content>
+					<IconTabBar id="idIconTabBarMulti" class="sapUiResponsiveContentPadding">
+						<!--expanded="{device>/isNoPhone}"-->
+						<items>
+							<IconTabFilter icon="sap-icon://contacts">
+								<FlexBox width="100%">
+									<VBox width="100%" class="sapUiMediumMargin">
+										<FlexBox width="100%">
+											<VBox width="10%">
+												<Label text="{i18n>search_itemno}" class="sapUiTinyMarginBeginEnd sapUiSmallMargin "></Label>
+											</VBox>
+											<VBox width="80%">
+												<SearchField search="onSearchNo" showSearchButton="true" class="sapUiMediumMarginBegin"></SearchField>
+											</VBox>
+										</FlexBox>
+										<Panel id="searchpanel" expandable="true" headerText="{i18n>search_advancedsearchtitle}">
+											<content>
+												<VBox width="100%">
+													<HBox>
+														<VBox width="150px">
+															<Label text="{i18n>search_itemname}" class="sapUiTinyMarginBeginEnd sapUiSmallMargin "></Label>
+														</VBox>
+														<VBox width="50%">
+															<Input id="itemname"></Input>
+														</VBox>
+														<VBox width="150px">
+															<Label text="{i18n>search_createdate}" class="sapUiTinyMarginBeginEnd sapUiSmallMargin "></Label>
+														</VBox>
+														<VBox width="50%">
+															<DatePicker id="createdate" valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd"/>
+														</VBox>
+													</HBox>
+													<HBox>
+														<VBox width="150px">
+															<Label text="{i18n>search_parentname}" class="sapUiTinyMarginBeginEnd sapUiSmallMargin "></Label>
+														</VBox>
+														<VBox width="50%">
+															<Input id="parent"></Input>
+														</VBox>
+														<VBox width="20%" class="sapUiMediumMarginBeginEnd">
+															<Button text="Search" class="sapUiTinyMarginBeginBegin mySuperRedButton" press="onAdvancedSearch"></Button>
+														</VBox>
+													</HBox>
+												</VBox>
+											</content>
+										</Panel>
+									</VBox>
+								</FlexBox>
+								<VBox>
+									<List id="itemsList" headerText="Items List" class="sapUiResponsiveMargin" width="auto" items="{/items}">
+										<items>
+											<ObjectListItem title="{no}" type="Navigation" press="onPress">
+												<attributes>
+													<ObjectAttribute text="{name}"/>
+													<ObjectAttribute text="{created}"/>
+												</attributes>
+											</ObjectListItem>
+										</items>
+									</List>
 								</VBox>
-								<VBox width="80%">
-									<SearchField search="onSearchNo" showSearchButton="true" class="sapUiMediumMarginBegin" ></SearchField>
-								</VBox>
-							</FlexBox>
-							<Panel id="searchpanel" expandable="true" headerText="{i18n>search_advancedsearchtitle}" >
-								<content>
-								<VBox width="100%">
-									<HBox>
-										<VBox width="150px" >
-											<Label text="{i18n>search_itemname}" class="sapUiTinyMarginBeginEnd sapUiSmallMargin "></Label>
-										</VBox>
-										<VBox width="50%" >
-											<Input id="itemname"></Input>
-									    </VBox>
-									    <VBox width="150px" >
-									    	<Label text="{i18n>search_createdate}" class="sapUiTinyMarginBeginEnd sapUiSmallMargin "></Label>
-									    </VBox>
-									    <VBox width="50%" >
-									    	<DatePicker id="createdate"	valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd" />
-									    </VBox>
-									</HBox>
-									<HBox>
-										<VBox width="150px" >
-									    	<Label text="{i18n>search_parentname}" class="sapUiTinyMarginBeginEnd sapUiSmallMargin "></Label>
-									    </VBox>
-									    <VBox width="50%" >
-									    	<Input id="parent"></Input>
-									    </VBox>
-									    <VBox width="20%" class="sapUiMediumMarginBeginEnd" >
-									    	<Button text="Search" class="sapUiTinyMarginBeginBegin mySuperRedButton" press="onAdvancedSearch"></Button>
-									     </VBox>
-									</HBox>
-								</VBox>
-			                  </content>
-			                </Panel>
-		                </VBox>
-	                </FlexBox>
-	                <VBox>
-	                	<List id="itemsList" headerText="Items List"
-					      class="sapUiResponsiveMargin"
-					      width="auto"
-					      items="{/items}" >
-					      <items>
-					         <ObjectListItem title="{no}" type="Navigation" press="onPress">
-					         	<attributes>
-									<ObjectAttribute text="{name}" />
-									<ObjectAttribute text="{created}" />
-										
-								</attributes>
-							
-					         </ObjectListItem>
-					      </items>
-					   </List>
-					   <!--<List items="{/Categories}" headerText="Items from OData Service">
-					   		<items>
-					   			<ObjectListItem id="masterListItem" title="{CategoryName}" intro="{Description}"></ObjectListItem>
-					   		</items>
-					   </List>-->
-	                </VBox>
-	            </content>
-	         </Page>
-    	</pages>
-   </App>
+							</IconTabFilter>
+							<IconTabFilter icon="sap-icon://offsite-work" >
+									<List items="{OData>/Categories}" headerText="Items from OData Service">
+										<items>
+											<ObjectListItem id="masterListItem" title="{OData>CategoryName}" intro="{OData>Description}"></ObjectListItem>
+										</items>
+									</List>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+			</Page>
+		</pages>
+	</App>
 </mvc:View>

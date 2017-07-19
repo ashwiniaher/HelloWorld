@@ -17,13 +17,13 @@ sap.ui.define([
 			oView.bindElement({
 				path: path ,
 				events : {
-					change: this._onBindingChange.bind(this),
+					/*change: this._onBindingChange.bind(this),
 					dataRequested: function () {
 						oView.setBusy(true);
 					},
 					dataReceived: function () {
 						oView.setBusy(false);
-					}
+					}*/
 				}
 			});
 		},
