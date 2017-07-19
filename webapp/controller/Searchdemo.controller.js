@@ -11,7 +11,6 @@ sap.ui.define([
 			// set Items model on this sample
 			var oModel = new JSONModel(jQuery.sap.getModulePath("TestGit", "/Items.json"));
 			this.getView().setModel(oModel);
-			
 		},
 		onSearchNo: function(oEvent){
 			// build filter array

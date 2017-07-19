@@ -35,6 +35,12 @@ sap.ui.define([
 			};
 			var oModel = new JSONModel(oData);
 			this.setModel(oModel);
+		
+			// set i18n model. To test germen language add ?sap-ui-language=DE to url	
+			var i18nModel = new sap.ui.model.resource.ResourceModel({
+				bundleUrl : "i18n/i18n.properties"
+			});
+			this.setModel(i18nModel, "i18n");
 			
 		/*	var mConfig = this.getMetadata().getManifestEntry("sap.app");
 			var sServiceUrl = mConfig.dataSources.Northwind.uri;//this.getMetadata().getManifestEntry("sap.app").dataSources.Northwind.uri
